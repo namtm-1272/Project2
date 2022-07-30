@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | Project2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+        <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="ogani-master/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="ogani-master/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="ogani-master/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="ogani-master/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="ogani-master/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="ogani-master/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="ogani-master/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="ogani-master/css/style.css" type="text/css">
+
+    <%= render "layouts/shim" %>
+  </head>
+
+  <body>
+    <%= render "layouts/header" %>
+      <div class="container">
+         <%= yield %>
+         <%= render "layouts/footer" %>
+      </div>
+  </body>
+</html>
