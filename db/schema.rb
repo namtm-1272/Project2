@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_30_123032) do
+ActiveRecord::Schema.define(version: 2022_07_30_160443) do
 
   create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -99,8 +99,8 @@ ActiveRecord::Schema.define(version: 2022_07_30_123032) do
     t.integer "role", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "point"
-    t.string "rank"
+    t.integer "point", default: 0
+    t.string "rank", default: "D"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["phone_num"], name: "index_users_on_phone_num", unique: true
   end
