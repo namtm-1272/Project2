@@ -28,9 +28,26 @@
                                     <li><a href="#">English</a></li>
                                 </ul>
                             </div>
-                            <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
-                            </div>
+
+                                <% if logged_in? %>
+                                    <div class="header__top__right__language">
+                                        <img class= "fa fa-user" alt="">
+                                        <div>Account</div>
+                                        <span class="arrow_carrot-down"></span>
+                                        <ul>
+                                            <li><a href="#">Profile</a></li>
+                                            <li><a href="#">Settings</a></li>
+                                            <%= link_to "Log out", logout_path, method: :delete %>
+                                        </ul>
+                                    </div>
+                                <% else %>
+                                    <div class="header__top__right__auth">
+                                        <li><%= link_to "Log in", login_path, class: "fa fa-user" %></li>
+                                    </div>
+                                <% end %>
+
+
+
                         </div>
                     </div>
                 </div>
@@ -46,12 +63,13 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li class="active"><a href="/">Home</a></li>
                             <li><a href="./shop-grid.html">Shop</a></li>
+                            <li><a href="./help">Help</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
+                                    <li><a href="/shoping-cart">Shoping Cart</a></li>
                                     <li><a href="./checkout.html">Check Out</a></li>
                                     <li><a href="./blog-details.html">Blog Details</a></li>
                                 </ul>
